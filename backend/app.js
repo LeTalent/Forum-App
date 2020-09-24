@@ -8,7 +8,7 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-mongoose.connect('mongodb://127.0.0.1:27017/post-manager',
+mongoose.connect('mongodb+srv://maurice:ZyzGxJV42iOARbwJ@cluster0.fh5hu.mongodb.net/forum-app?retryWrites=true&w=majority',
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, })
   .then(() => {
     console.log('connected to database');
