@@ -1,7 +1,25 @@
-<mat-toolbar color="primary">
-  <span><a routerLink='/'>MyMessages</a></span>
+<mat-toolbar color="primary" class="sticky">
+  <div fxLayout="row">
+    <a mat-button routerLink="/" routerLinkActive="router-link-active" >
+      <mat-icon fxHide fxShow.xs [matMenuTriggerFor]="menu">dehaze</mat-icon>
+      <mat-icon fxShow fxHide.xs>home</mat-icon>
+      <span class="logo" fxShow fxHide.xs>Forum App</span>
+    </a>
+    <div fxLayout="row" fxShow fxHide.xs>
+      <a mat-button>Home</a>
+      <a mat-button>About us</a>
+      <a mat-button>Contact us</a>
+    </div>
+  </div>
+
   <span class="spacer"></span>
   <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button>
+        <mat-icon>person_outline</mat-icon>
+      </a>
+      <span>{{user}}</span>
+    </li>
     <li *ngIf="userIsAuthenticated">
       <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
     </li>
@@ -15,4 +33,10 @@
       <button mat-button (click)='onLogout()'>Logout</button>
     </li>
   </ul>
-</mat-toolbar>
+</mat-toolbar><br><br>
+<!-- menu items -->
+<mat-menu #menu="matMenu" fxLayoutAlign="end">
+  <button mat-menu-item>Home</button>
+  <button mat-menu-item>About Us</button>
+  <button mat-menu-item>Contact Us</button>
+</mat-menu>

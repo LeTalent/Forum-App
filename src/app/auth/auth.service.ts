@@ -6,6 +6,8 @@ import { Subject } from "rxjs";
 import { AuthData } from "./auth-data.model";
 
 import { environment } from '../../environments/environment';
+import { EmailValidator } from '@angular/forms';
+import { Post } from '../posts/post.model';
 
 const BACKEND_URL = environment.apiUrl + '/user/';
 

@@ -1,5 +1,13 @@
 
 main {
-  width: 80%;
-  margin: 1rem auto;
+  // margin: 1rem auto;
+}
+.container{
+  text-align: center;
+  border: solid 1px lightgray;
+  border-radius: 5px;
+}
+
+.container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
