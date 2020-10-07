@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     MatSidenavModule,
     MatMenuModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSelectModule
 
   ]
 })

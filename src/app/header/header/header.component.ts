@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
+import { AuthData } from '../../auth/auth-data.model'
 import { Subscription } from 'rxjs';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +11,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 export class HeaderComponent implements OnInit, OnDestroy {
   userIsAuthenticated = false;
   private authListenerSubs: Subscription;
+  userEmail: string;
+  authData: AuthData;
+  opened = true;
+
+
   constructor( private authService: AuthService ) { }
 
   ngOnInit() {
@@ -20,6 +25,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     .subscribe(isAuthenticated => {
       this.userIsAuthenticated = isAuthenticated;
       })
+
+    this.userEmail = this.authService.getUserEmail();
+    console.log(this.userEmail);
   }
 
   onLogout() {

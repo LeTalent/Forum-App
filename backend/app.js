@@ -8,7 +8,8 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-mongoose.connect("mongodb+srv://maurice:" +
+mongoose.connect(
+      "mongodb+srv://maurice:"+
       process.env.MONGO_ATLAS_PW +
       "@cluster0.fh5hu.mongodb.net/forum-app?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, })
@@ -21,7 +22,7 @@ mongoose.connect("mongodb+srv://maurice:" +
 
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
-  app.use('/images', express.static(path.join('backend/images')));
+  app.use('/images', express.static(path.join("backend/images")));
 
 
   app.use((req, res, next) => {
