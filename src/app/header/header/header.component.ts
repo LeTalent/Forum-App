@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { AuthData } from '../../auth/auth-data.model'
 import { Subscription } from 'rxjs';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userEmail: string;
   authData: AuthData;
   opened = true;
+  @Input() sidenav: MatSidenav;
 
 
   constructor( private authService: AuthService ) { }

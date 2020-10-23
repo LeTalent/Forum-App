@@ -1,7 +1,5 @@
 
-main {
-  // margin: 1rem auto;
-}
+
 .container{
   text-align: center;
   border: solid 1px lightgray;
@@ -10,4 +8,11 @@ main {
 
 .container:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+::ng-deep .cdk-overlay-container {
+  /* Do you changes here */
+  position: fixed;
+  z-index: 1;
+  margin-top: 15px;
+  margin-left: -35px;
 }
