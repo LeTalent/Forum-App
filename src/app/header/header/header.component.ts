@@ -12,7 +12,7 @@ import { MatSidenav } from '@angular/material';
 export class HeaderComponent implements OnInit, OnDestroy {
   userIsAuthenticated = false;
   private authListenerSubs: Subscription;
-  userEmail: string;
+  // userEmail: string;
   authData: AuthData;
   opened = true;
   @Input() sidenav: MatSidenav;
@@ -28,8 +28,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.userIsAuthenticated = isAuthenticated;
       })
 
-    this.userEmail = this.authService.getUserEmail();
-    console.log(this.userEmail);
+    // this.userEmail = this.authService.getUserEmail();
+    // console.log(this.userEmail);
   }
 
   onLogout() {

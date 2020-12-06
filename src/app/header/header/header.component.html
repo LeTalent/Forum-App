@@ -20,9 +20,9 @@
     <ul>
       <li *ngIf="userIsAuthenticated">
         <a mat-button>
-          <mat-icon>person_outline</mat-icon>
+          <mat-icon>account_circle</mat-icon>
         </a>
-        <span>{{userEmail}}</span>
+        <!-- <span>{{userEmail}}</span> -->
       </li>
       <li *ngIf="userIsAuthenticated">
         <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>

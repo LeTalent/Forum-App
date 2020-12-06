@@ -11,7 +11,7 @@ const app = express();
 mongoose.connect(
       "mongodb+srv://maurice:"+
       process.env.MONGO_ATLAS_PW +
-      "@cluster0.fh5hu.mongodb.net/forum-app?retryWrites=true&w=majority",
+      "@cluster0.58p6a.mongodb.net/forum-app?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, })
   .then(() => {
     console.log('connected to database');
@@ -26,14 +26,14 @@ mongoose.connect(
 
 
   app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization"
     );
     res.setHeader(
-      'Access-Control-Allow-Methods',
-      'GET, POST, PATCH, PUT, DELETE, OPTIONS'
+      "Access-Control-Allow-Methods",
+      "GET, POST, PATCH, PUT, DELETE, OPTIONS"
     );
     next();
   });
@@ -43,3 +43,5 @@ mongoose.connect(
   app.use('/api/user', userRoutes);
 
   module.exports = app;
+
+

@@ -13,6 +13,8 @@ router.put("/:id", checkAuth, extractFile, PostController.updatePost);
 
 router.get("", PostController.getPosts);
 
+router.get("", PostController.getAllPosts);
+
 router.get("/:id", PostController.getPost);
 
 router.delete("/:id", checkAuth, PostController.deletePost);

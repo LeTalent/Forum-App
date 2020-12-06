@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Subject } from "rxjs";
+import { Subject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
 import { environment } from '../../environments/environment';
@@ -10,6 +10,7 @@ const BACKEND_URL = environment.apiUrl +'/posts/';
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
+  private post: Post;
   private posts: Post[] = [];
   private postsUpdated = new Subject<{ posts: Post[]; postCount: number }>();
 
@@ -49,6 +50,10 @@ export class PostsService {
     return this.postsUpdated.asObservable();
   }
 
+  // getPostsList(){
+  //   return this.http.get<{posts: Post[]}>(BACKEND_URL)
+  // }
+
   getPost(id: string) {
     return this.http.get<{
       _id: string;
@@ -59,6 +64,12 @@ export class PostsService {
       creator: string;
     }>(BACKEND_URL  + id);
   }
+
+//   getSinglePost(id: string){
+//     return this.getPostsList()
+//      .pipe(
+//        map((posts) => posts.find( p => p.id === id) ));
+//  }
 
   addPost(title: string, description: string,content: string, image: File) {
     const postData = new FormData();

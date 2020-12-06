@@ -1,6 +1,6 @@
 {
   "env": {
-    "MONGO_ATLAS_PW": "ZyzGxJV42iOARbwJ",
+    "MONGO_ATLAS_PW": "ebXNlvlWeYcfSt1v",
    "JWT_KEY": "secret_word_to_check_the_authentication_of_a_token"
   }
 }

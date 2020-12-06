@@ -22,3 +22,8 @@
   // height: 500px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
+
+::ng-deep .mat-expansion-panel{
+  width: 90%;
+  margin: 30px auto !important;
+}

@@ -83,6 +83,26 @@ exports.getPosts = (req, res, next) => {
     });
 };
 
+exports.getAllPosts = ((req, res, next) => {
+  const postQuery = Post.find();
+  let fetchedPosts;
+  postQuery
+  .then(documents => {
+    fetchedPosts = documents;
+    return Post.countDocuments();
+  })
+  .then(count => {
+    res.status(200).json({
+      posts: fetchedPosts,
+    });
+  })
+  .catch(error => {
+    res.status(500).json({
+      message: "Fetching posts failed!"
+    });
+  });
+})
+
 exports.getPost = (req, res, next) => {
   Post.findById(req.params.id)
     .then(post => {

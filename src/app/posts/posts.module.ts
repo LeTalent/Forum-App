@@ -6,9 +6,10 @@ import { RouterModule } from "@angular/router";
 import { PostCreateComponent } from "./post-create/post-create.component";
 import { PostListComponent } from "./post-list/post-list.component";
 import { AngularMaterialModule } from "../angular-material.module";
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 @NgModule({
-  declarations: [PostCreateComponent, PostListComponent],
+  declarations: [PostCreateComponent, PostListComponent, PostDetailsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
